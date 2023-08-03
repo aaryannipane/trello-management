@@ -102,7 +102,7 @@ const Header = ({ text, bg, count }) => {
     >
       {text}{" "}
       <div className="ml-auto mr-5 bg-slate-800 w-5 h-5 rounded-full p-4 flex items-center justify-center text-white ">
-        {count}
+        {count || 0}
       </div>
     </div>
   );

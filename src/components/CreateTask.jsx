@@ -21,9 +21,12 @@ export const CreateTask = ({ tasks, setTasks }) => {
     }
 
     setTasks((prev)=> {
-        const list = [...prev, task]
-        localStorage.setItem("tasks", JSON.stringify(list))
-        return list
+        if (!prev) {
+            prev = []; // If prev is null or undefined, initialize it as an empty array
+          }
+          const list = [...prev, task];
+          localStorage.setItem("tasks", JSON.stringify(list));
+          return list;
     })
     toast.success("Task Created", {duration: 2000})
     setTask({

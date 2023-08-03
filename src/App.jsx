@@ -10,7 +10,9 @@ function App() {
   const [tasks, setTasks] = useState([]);
 
   useEffect(()=>{
-    setTasks(JSON.parse(localStorage.getItem("tasks")))
+    if(JSON.parse(localStorage.getItem("tasks"))){
+      setTasks(JSON.parse(localStorage.getItem("tasks")))
+    }
   }, [])
   console.log(tasks)
   return (
