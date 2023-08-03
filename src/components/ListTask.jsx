@@ -8,9 +8,9 @@ export const ListTask = ({ tasks, setTasks }) => {
   const [completed, setCompleted] = useState([]);
 
   useEffect(() => {
-    const ftodos = tasks.filter((task) => task.status === "todo");
-    const fInProgresse = tasks.filter((task) => task.status === "inprogress");
-    const fCompleted = tasks.filter((task) => task.status === "completed");
+    const ftodos = tasks?.filter((task) => task.status === "todo");
+    const fInProgresse = tasks?.filter((task) => task.status === "inprogress");
+    const fCompleted = tasks?.filter((task) => task.status === "completed");
 
     setTodo(ftodos);
     setInProgress(fInProgresse);
@@ -109,7 +109,7 @@ const Header = ({ text, bg, count }) => {
 };
 const Task = ({ task, tasks, setTasks }) => {
   const handleRemove = (id) => {
-    const fTasks = tasks.filter((task) => task.id != id);
+    const fTasks = tasks?.filter((task) => task.id != id);
     setTasks(fTasks);
     localStorage.setItem("tasks", JSON.stringify(fTasks));
     toast.success("Task Deleted", { duration: 2000 });
