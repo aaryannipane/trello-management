@@ -87,7 +87,7 @@ const Section = ({
   return (
     <div ref={drop} className={`w-64 rounded-md p-2 ${isOver? "bg-slate-500":""} border min-h-[200px]`}>
       <Header text={text} bg={bg} count={tasksToMap.length} />
-      {tasks.length === 0? <div className="p-2 text-sm">There Are No Task To Do🥳</div>: ""}
+      {tasks?.length === 0? <div className="p-2 text-sm">There Are No Task To Do🥳</div>: ""}
       {tasksToMap?.map((task) => (
         <Task key={task.id} tasks={tasks} setTasks={setTasks} task={task} />
       ))}
